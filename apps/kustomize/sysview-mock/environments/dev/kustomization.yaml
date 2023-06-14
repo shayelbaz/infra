@@ -1,0 +1,15 @@
+resources:
+  - ../../base
+patches:
+  - path: replica_count.yaml
+  - path: resource_limits.yaml
+  - path: env.yaml
+configMapGenerator:
+- name: my-config-collectors
+  # behavior: replace
+  files:
+    - configs/collectors.json
+images:
+- name: shayelbaz90/mock-node
+  newTag: "12"
+namespace: "mock"

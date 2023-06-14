@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: mock-app
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: apps/kustomize/sysview-mock/environments/dev
+    repoURL: https://github.com/shayelbaz/infra
+    targetRevision: HEAD
+  syncPolicy:
+    automated:
+      allowEmpty: true
+      selfHeal: true
+    syncOptions:
+    - allowEmpty=true
+    - CreateNamespace=true

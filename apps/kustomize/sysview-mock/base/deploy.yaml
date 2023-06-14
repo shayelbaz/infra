@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: mock
+  name: mock-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mock
+  template:
+    metadata:
+      labels:
+        app: mock
+    spec: 
+      containers:
+      - image: shayelbaz90/mock-node:12
+        name: mock
+        ports:
+        - containerPort: 8080
+        volumeMounts:
+        - name: collectors
+          mountPath: "/tmp/collectors"
+          readOnly: true
+      volumes:
+      - name: collectors
+        configMap:
+          name: my-config-collectors
