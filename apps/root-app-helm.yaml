@@ -9,7 +9,7 @@ metadata:
   namespace: argocd
 spec:
   destination:
-    namespace: mock-app
+    namespace: mock
     server: https://kubernetes.default.svc
   ignoreDifferences:
   - group: argoproj.io
