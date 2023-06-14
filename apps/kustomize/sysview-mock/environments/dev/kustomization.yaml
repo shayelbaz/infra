@@ -11,5 +11,5 @@ configMapGenerator:
     - configs/collectors.json
 images:
 - name: shayelbaz90/mock-node
-  newTag: "12"
+  newTag: "13"
 namespace: "mock"
