@@ -10,7 +10,7 @@ spec:
   sourceNamespaces:
     - mock
   destinations:
-    - namespace: 'mock*'
+    - namespace: '*'
       server: '*'
   clusterResourceWhitelist:
     - group: '*'
