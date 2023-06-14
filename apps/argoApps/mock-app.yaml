@@ -12,6 +12,8 @@ spec:
     path: apps/kustomize/sysview-mock/environments/dev
     repoURL: https://github.com/shayelbaz/infra
     targetRevision: HEAD
+  sourceNamespaces:
+    - mock
   syncPolicy:
     automated:
       allowEmpty: true
