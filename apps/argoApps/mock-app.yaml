@@ -8,8 +8,6 @@ spec:
   destination:
     server: https://kubernetes.default.svc
   project: dev
-  sourceNamespaces:
-  - mock*
   source:
     path: apps/kustomize/sysview-mock/environments/dev
     repoURL: https://github.com/shayelbaz/infra
